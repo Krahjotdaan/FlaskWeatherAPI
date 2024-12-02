@@ -12,8 +12,6 @@ def get_location_key(lat, lon):
     response = requests.get(url)
     response.raise_for_status() 
     data = response.json()
-    with open('loc_key.json', 'a', encoding='utf-8') as f:
-        json.dump(data, f, indent=4)
 
     return data['Key']
 
