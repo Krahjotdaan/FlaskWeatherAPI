@@ -1,4 +1,7 @@
-def get_main_params(data):
+import json
+
+
+def get_main_params(data: dict):
     main_params = {}
 
     main_params["temp"] = data["Temperature"]["Metric"]["Value"]
@@ -20,7 +23,7 @@ def check_bad_weather(data):
         return True
     if main_params["feel_temp"] < -10 or main_params["feel_temp"] > 30:
         return True
-    if main_params["wind_speed"] > 40:
+    if main_params["wind_speed"] > 10:
         return True
     if main_params["pressure"] < 1024 * 0.7 or main_params["pressure"] > 1024 * 2.5:
         return True
