@@ -1,5 +1,20 @@
+"""
+This module provides functions to process weather data and generate formatted strings.
+"""
 
 def get_main_params(data: dict):
+    """
+    Extracts and formats key weather parameters from a dictionary.
+
+    Args:
+        data: A dictionary containing raw weather data.  Assumed to have keys 
+              like "Temperature", "RealFeelTemperature", "WeatherText", etc.
+
+    Returns:
+        A dictionary containing formatted weather parameters: temp, feel_temp, 
+        weather_text, precipitation, humidity, wind_speed, direction, pressure.
+    """
+
     main_params = {}
 
     main_params["temp"] = data["Temperature"]["Metric"]["Value"]
@@ -15,6 +30,18 @@ def get_main_params(data: dict):
 
 
 def get_result_str(main_params: dict):
+    """
+    Generates a formatted string summarizing weather conditions.
+
+    Args:
+        main_params: A dictionary containing formatted weather parameters 
+                     (output from get_main_params).
+
+    Returns:
+        A formatted string describing the weather, including an assessment of 
+        whether conditions are favorable or unfavorable.
+    """
+    
     result_str = ""
 
     result_str += f'Температура: {main_params["temp"]}C \n'

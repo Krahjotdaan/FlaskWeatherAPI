@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
 <head>
     <title>Погода на маршруте</title>
 </head>
