@@ -5,10 +5,14 @@
 </head>
 <body>
     <h1>Результаты</h1>
-    <p><b>Начальная точка:</b> {{ start_point }}</p>
-    <p><b>Погода в начальной точке:</b> {{ start_evaluation }}</p>
-    <p><b>Конечная точка:</b> {{ end_point }}</p>
-    <p><b>Погода в конечной точке:</b> {{ end_evaluation }}</p>
+
+    <h3>Начальная точка: {{ start_point }}</h3>
+    <h3>Погода в начальной точке: </h3>
+    <pre>{{ start_evaluation }}</pre>
+
+    <h3>Конечная точка: {{ end_point }}</h3>
+    <h3>Погода в конечной точке: </h3>
+    <pre>{{ end_evaluation }}</pre>
     <a href="/">Вернуться</a>
 </body>
 </html>

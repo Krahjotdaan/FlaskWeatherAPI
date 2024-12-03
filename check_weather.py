@@ -7,7 +7,7 @@ def get_main_params(data: dict):
     main_params["weather_text"] = data["WeatherText"]
     main_params["precipitation"] = data["HasPrecipitation"]
     main_params["humidity"] = data["RelativeHumidity"]
-    main_params["wind_speed"] = data["Wind"]["Speed"]["Metric"]["Value"] * 1000 / 3600
+    main_params["wind_speed"] = round(data["Wind"]["Speed"]["Metric"]["Value"] * 1000 / 3600, 1)
     main_params["direction"] = data["Wind"]["Direction"]["English"]
     main_params["pressure"] = data["Pressure"]["Metric"]["Value"]
 
